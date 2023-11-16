@@ -9,7 +9,7 @@ mod test {
     fn index_list_compiles() {
         #[derive(Serialize, Deserialize, Clone, Debug, PartialEq)]
         struct TestStruct {
-            id: u64,
+            id1: u64,
             id2: u32,
             addr: Addr,
         }
@@ -33,7 +33,7 @@ mod test {
     fn index_list_works() {
         #[derive(Serialize, Deserialize, Clone, Debug, PartialEq)]
         struct TestStruct {
-            id: u64,
+            id1: u64,
             id2: u32,
             addr: Addr,
         }
@@ -57,7 +57,7 @@ mod test {
             &mut storage,
             0,
             &TestStruct {
-                id: 0,
+                id1: 0,
                 id2: 100,
                 addr: Addr::unchecked("1"),
             },
@@ -67,7 +67,7 @@ mod test {
         assert_eq!(
             idm.load(&storage, 0).unwrap(),
             TestStruct {
-                id: 0,
+                id1: 0,
                 id2: 100,
                 addr: Addr::unchecked("1"),
             }
